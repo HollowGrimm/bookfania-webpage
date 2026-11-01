@@ -13,4 +13,4 @@
 
 Alternative: instead of Actions, push the *contents* of `site/` to a `gh-pages` branch and set Source to "Deploy from a branch → gh-pages / (root)".
 
-Before publishing to stores: replace the "Coming soon" buttons (TODO comments in `site/index.html`) and the placeholder `site/privacy.html`. If the repo or owner name changes, update the absolute `og:image`/`og:url` meta tags.
+Before relying on the site for store listings, replace the placeholder `site/privacy.html` with a real policy. If the repo or owner name changes, update the absolute `og:image`/`og:url` meta tags.
