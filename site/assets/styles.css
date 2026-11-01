@@ -39,3 +39,9 @@ h1,h2,h3{line-height:1.2;margin:0 0 .5em}h2{font-size:clamp(1.8rem,4vw,2.5rem);t
 @media(min-width:760px){.nav nav{display:flex}.hero{grid-template-columns:1.1fr 1fr;text-align:left}.hero .lead{margin-left:0}.hero .ctas{justify-content:flex-start}
 .cards{grid-template-columns:repeat(3,1fr)}.trio{grid-template-columns:repeat(3,1fr)}.split{grid-template-columns:auto 1fr auto}.gallery{grid-template-columns:repeat(5,1fr)}.hero-phone{width:200px}}
 .store{display:inline-block;line-height:0}.store img{height:48px;width:auto}.ctas{align-items:center}
+
+html{scroll-behavior:smooth}
+h2[id]{scroll-margin-top:84px}
+section[id]{scroll-margin-top:60px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.nowrap{white-space:nowrap}
