@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/img/favicon-32.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png"><meta name="theme-color" content="#F8F0E4"><link rel="stylesheet" href="assets/styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/img/favicon-32.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png"><meta name="theme-color" content="#F8F0E4"><link rel="stylesheet" href="assets/styles.css?v=4">
 <title>Bookfania — reading companion, quizzes &amp; reading progress</title>
 <meta name="description" content="Bookfania is a reading companion app: find books, take AI-generated quizzes, keep a private library, read with friends, and earn XP, quests, leagues and monthly badges.">
 <meta property="og:type" content="website">
@@ -101,6 +101,19 @@
 </section>
 </main>
 <footer class="foot"><p>© <span id="yr">2026</span> Bookfania · <a href="privacy.html">Privacy</a></p></footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+// Land each header link just below the sticky header, whatever its height.
+document.querySelectorAll('.nav nav a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.getElementById(a.getAttribute('href').slice(1)); if(!t) return;
+    e.preventDefault();
+    var navH=document.querySelector('.nav').getBoundingClientRect().height;
+    var y=t.getBoundingClientRect().top+window.pageYOffset-navH-(t.tagName==='SECTION'?0:24);
+    window.scrollTo({top:y,behavior:'smooth'});
+    history.replaceState(null,'','#'+t.id);
+  });
+});
+</script>
 </body>
 </html>
